@@ -17,6 +17,15 @@ from employees where employees.hire_date >= '1986-01-01'
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
+select employees.last_name AS "Last_name",
+	employees.first_name AS "First_name",
+	employees.emp_no AS "Employee_number",
+	departments.dept_name AS "Department_name",
+	dept_manager.dept_no AS "Department_number"
+from employees
+inner join dept_manager on dept_manager.emp_no = employees.emp_no
+inner join departments on dept_manager.dept_no = departments.dept_no
+order by "Department_number" ASC;
 
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
 
