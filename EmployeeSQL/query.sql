@@ -29,6 +29,15 @@ order by "Department_number" ASC;
 
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
 
+select departments.dept_name AS "Department Name",
+	employees.emp_no AS "Employee Number",
+	employees.last_name AS "Last Name",
+	employees.first_name AS "First Name"
+from departments
+inner join dept_employees on departments.dept_no = dept_employees.dept_no
+inner join employees on dept_employees.emp_no = employees.emp_no
+order by "Department Name" DESC
+
 
 --List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
 
