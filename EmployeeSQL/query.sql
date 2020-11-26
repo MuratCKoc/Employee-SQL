@@ -9,8 +9,11 @@ select employees.emp_no AS "Employee_no",
 from employees
 join salaries on employees.emp_no = salaries.emp_no
 
-
 --List first name, last name, and hire date for employees who were hired in 1986.
+select employees.first_name AS "First_name",
+	employees.last_name AS "Last_name",
+	employees.hire_date AS "Date"
+from employees where employees.hire_date >= '1986-01-01'
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
